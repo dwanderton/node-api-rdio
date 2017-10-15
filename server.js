@@ -12,6 +12,8 @@ const winston = require('winston');
 var expressWinston = require('express-winston');
 const env = process.env.NODE_ENV || 'development';
 const logDir = 'log';
+const S3_BUCKET = process.env.S3_BUCKET;
+
 // Create the log directory if it does not exist
 if (!fs.existsSync(logDir)) {
   fs.mkdirSync(logDir);
@@ -119,7 +121,7 @@ request(options, function(error, response, body) {
         s3.putObject({
             Body: body,
             Key: "cat.jpg",//path,
-            Bucket: env.S3_BUCKET
+            Bucket: S3_BUCKET
         }, function(error, data) {
             if (error) {
                 console.log("error downloading image to s3");
