@@ -121,8 +121,7 @@ request(options, function(error, response, body) {
         s3.putObject({
             Body: body,
             Key: "cat.jpg",//path,
-            Bucket: S3_BUCKET,
-            CannedACL: S3CannedACL.PublicRead
+            Bucket: S3_BUCKET
         }, function(error, data) {
             if (error) {
                 console.log("error downloading image to s3");
