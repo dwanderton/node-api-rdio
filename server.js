@@ -119,7 +119,7 @@ request(options, function(error, response, body) {
         s3.putObject({
             Body: body,
             Key: "cat.jpg",//path,
-            Bucket: 'bucket_name'
+            Bucket: S3_BUCKET
         }, function(error, data) {
             if (error) {
                 console.log("error downloading image to s3");
