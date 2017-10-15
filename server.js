@@ -118,7 +118,7 @@ request(options, function(error, response, body) {
     } else {
         s3.putObject({
             Body: body,
-            Key: "",//path,
+            Key: "cat.jpg",//path,
             Bucket: 'bucket_name'
         }, function(error, data) {
             if (error) {
