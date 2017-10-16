@@ -7,6 +7,13 @@ const fs = require('fs');
 const http = require("http");
 var request = require("request");
 
+const NLU_url = "https://gateway.watsonplatform.net/natural-language-understanding/api/v1/analyze";
+const NLU_username = process.env.NLU_username;
+const NLU_password = process.env.NLU_password;
+const S2T_url = "https://stream.watsonplatform.net/speech-to-text/api";
+const S2T_username = process.env.S2T_username;
+const S2T_password = process.env.S2T_password;
+
 /* logging start */
 const winston = require('winston');
 var expressWinston = require('express-winston');
